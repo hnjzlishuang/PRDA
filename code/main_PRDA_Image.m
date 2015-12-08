@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%用MKL算label
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PRDA
 clc;
 clear;
 format compact;
@@ -33,10 +33,10 @@ for iData=1:9
     options.NN=5;
     options.PCA=0;
     
-    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 线性
-%     [label_t,predict_t,W,Accuracy(:,iData)]=DA_train_MKL(Xs,Ys,Xt,Yt,options,yt0,label_t0);
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 非线性 高斯kernel
-   [label_t,predict_t,Accuracy(:,iData)]=HD_DA_train_MKL(Xs,Ys,Xt,Yt,options,yt0,label_t0);
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%% linear
+     [label_t,predict_t,W,Accuracy(:,iData)]=DA_train_MKL(Xs,Ys,Xt,Yt,options,yt0,label_t0);
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%% kernel
+  % [label_t,predict_t,Accuracy(:,iData)]=HD_DA_train_MKL(Xs,Ys,Xt,Yt,options,yt0,label_t0);
     
     clear yt0;
     clear label_t0;
