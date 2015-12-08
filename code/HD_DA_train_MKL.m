@@ -16,7 +16,7 @@ acc_t0=mean(yt0==Yt)*100;
 
 
 
-%%%%%%%%%%%%%%%Dimensionality_Reduction_Type¿ÉÑ¡£ºPCA£¬Laplacian£¬LLE
+%%%%%%%%%%%%%%%Dimensionality_Reduction_Typeå¯é€‰ï¼šPCAï¼ŒLaplacianï¼ŒLLE
 para.Dimensionality_Reduction_Type='PCA';
 %% PCA
 disp('para.Dimensionality_Reduction_Type...')
@@ -59,7 +59,7 @@ for iA=1
     end
     
     %     [S_source,~,~,~]=dormain_separator_train(Xt,Xs,options);
-    %% ÓÉÓÚsource domainºÍtarget domain ¶¼ÊÇ¾ùÖµÎª0µÄ£¬¹ÊÒªÓÃÃ¿Ò»ÀàsÀ´ºâÁ¿
+    %% ç”±äºsource domainå’Œtarget domain éƒ½æ˜¯å‡å€¼ä¸º0çš„ï¼Œæ•…è¦ç”¨æ¯ä¸€ç±»sæ¥è¡¡é‡
     S_source=zeros(Ns,1);
     for class=1:nClass
         % choose the domain separator & reweighting scheme
@@ -72,7 +72,7 @@ for iA=1
         
         S_source(find(Ys==class_set(class)))=S_s;   
     end
-    %% Ò»°ãµÄºâÁ¿·½·¨
+    %% ä¸€èˆ¬çš„è¡¡é‡æ–¹æ³•
     
     %%%%%%%%%%%%%%%%%%%%
     %[S_source,~,~,~]=dormain_separator_train(Xt,Xs,options);
@@ -86,7 +86,7 @@ for iA=1
     %%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ËãÑù±¾Xt¸ßÎ¬Kernel¾ØÕóHDK
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ç®—æ ·æœ¬Xté«˜ç»´KernelçŸ©é˜µHDK
     %%% options.Kernel: 'linear' | 'poly' | 'rbf'
     %%%options.KernelParam: specifies parameters for the kernel
     %                                    functions, i.e. degree for 'poly';
@@ -107,8 +107,7 @@ for iA=1
     % Train DA classifier
     for i=1:10
         options.lambda=10^(i-3);
-        %         options.lambda=10^(i);
-        
+      
         Alpha=(HDK*(diag(S)+options.lambda*L)*HDK+0.01*eye(size(Xt,1)))\(HDK*bsxfun(@times,S,label_t0));
         %          for j=1:10
         %         options.lambda1=2^(j-6);
