@@ -40,7 +40,7 @@ L=laplacian(options,Xt);
 
 %%
 for iA=1
-    options.A=0.1;
+    options.A=1;
     options.Kfold=2;
     
     %Train domain separator
